@@ -1,0 +1,31 @@
+Name,Quantity,Unit price (USD),Total (USD),URL to buy,Notes
+XIAO ESP32-C3 (U1),1,5.39,5.39,https://www.robotshop.com/products/seeedstudio-xiao-esp32c3-tiny-mcu-w-wi-fi-ble,Seeed XIAO ESP32C3 board only. price checked on seller page
+"AP63205WU-7 buck converter, 5V 2A, TSOT-26 (U2)",1,0.25,0.25,https://www.lcsc.com/product-detail/C2071056.html,"LCSC 'from' price, small quantities cost a little more. price checked on seller page"
+"Inductor 4.7uH, Bourns SRN6045TA-4R7M (L1)",1,0.60,0.60,https://www.digikey.fi/en/products/detail/bourns-inc/SRN6045TA-4R7M/6155104,"Out of stock at DigiKey (18 week lead time). Use a 6x6 mm 4.7uH shielded inductor with the same land pattern. estimate, check at checkout"
+"Capacitor 22uF 25V X5R 1206 (C1, C2)",2,0.0595,0.12,https://www.lcsc.com/product-detail/C12891.html,Samsung CL31A226KAHNNNE. LCSC 'from' price. price checked on seller page
+Capacitor 10uF 1206 (C4),1,0.05,0.05,https://www.lcsc.com/search?q=10uF+1206+25V+X5R,"Use 16V or higher. estimate, check at checkout"
+"Capacitor 100nF 0805 (C3, C5)",2,0.01,0.02,https://www.lcsc.com/search?q=100nF+0805+50V,"Parts are very cheap but often sold in packs. estimate, check at checkout"
+Resistor 1k 0805 (R1),1,0.01,0.01,https://www.lcsc.com/search?q=1k+0805+resistor,"estimate, check at checkout"
+"Resistor 100k 0805 (R2, battery divider top)",1,0.01,0.01,https://www.lcsc.com/search?q=100k+0805+resistor,"estimate, check at checkout"
+"Resistor 33k 0805 (R3, battery divider bottom)",1,0.01,0.01,https://www.lcsc.com/search?q=33k+0805+resistor,"estimate, check at checkout"
+Resistor 470 ohm 0805 (R4),1,0.01,0.01,https://www.lcsc.com/search?q=470+ohm+0805+resistor,"estimate, check at checkout"
+"Schottky diode SS34, SMA (D2)",1,0.05,0.05,https://www.lcsc.com/search?q=SS34,"estimate, check at checkout"
+"Diode 1N4148W, SOD-123 (D1, buzzer flyback)",1,0.02,0.02,https://www.lcsc.com/search?q=1N4148W,"estimate, check at checkout"
+LED 0805 (D3),1,0.03,0.03,https://www.lcsc.com/search?q=led+0805,"estimate, check at checkout"
+"NPN transistor MMBT3904, SOT-23 (Q1)",1,0.02,0.02,https://www.lcsc.com/search?q=MMBT3904,"estimate, check at checkout"
+"P-MOSFET AO3401A, SOT-23 (Q2)",1,0.10,0.10,https://www.lcsc.com/search?q=AO3401A,"estimate, check at checkout"
+"Passive buzzer 12x9.5 mm, Soberton WT-1209T (BZ1)",1,1.15,1.15,https://www.digikey.com/en/products/detail/soberton-inc/WT-1209T/16384509,DigiKey qty 1 price. Check the datasheet for 7.6 mm pin pitch before ordering. price checked on seller page
+GY-521 MPU6050 module (J4 socket),1,3.79,3.79,https://openelab.com/products/mpu6050-gy521-six-axis-sensor,Listed as sold out / pre-order (10-20 working days). Check other sellers. price checked on seller page
+"0.96 inch OLED 128x64 I2C SSD1306, 4 pin (J1 socket)",1,6.89,6.89,https://shillehtek.com/products/0-96-i2c-white-oled-display-module-4-pin-ssd1306,"Pin order differs between modules. Check it matches J1 (GND, 3V3, SCL, SDA) or the module will not work. price checked on seller page"
+"Female pin socket 1x8, 2.54 mm (J4)",1,0.15,0.15,https://www.lcsc.com/search?q=female+header+1x8+2.54,"estimate, check at checkout"
+"Female pin socket 1x4, 2.54 mm (J1)",1,0.10,0.10,https://www.lcsc.com/search?q=female+header+1x4+2.54,"estimate, check at checkout"
+"Male pin header 1x2, 2.54 mm (SW2 footprint)",1,0.05,0.05,https://www.lcsc.com/search?q=pin+header+1x2+2.54,"estimate, check at checkout"
+"Slide or rocker switch SPST, to wire to SW2",1,0.50,0.50,https://www.lcsc.com/search?q=slide+switch+SPDT,"estimate, check at checkout"
+"Tactile switch 6x6 mm through hole (SW1, SW3)",2,0.017,0.03,https://www.lcsc.com/product-detail/C480288.html,"XKB TC-1102-B-I-B, LCSC 'from' price, low stock (280). Pick a height that fits your case. price checked on seller page"
+JST PH 2-pin header B2B-PH-K-S (J2),1,0.30,0.30,https://www.digikey.nl/en/products/detail/jst-sales-america-inc/B2B-PH-K-S/926611,"Battery pack needs the mating JST PH plug. estimate, check at checkout"
+2S Li-ion battery pack 7.4V with JST PH 2.0 plug,1,9.00,9.00,https://www.digikey.com/en/search?keywords=7.4V%20li-ion%20battery%20pack%20JST%20PH,"Not checked. The connector is rated about 2 A. You also need a 2S charger. estimate, check at checkout"
+M3 screws and standoffs (4 sets),1,1.50,1.50,https://www.lcsc.com/search?q=M3+standoff,"Mounting holes are 3.2 mm. estimate, check at checkout"
+"PCB, 2 layer, 36x82 mm, 1.6 mm, green (5 pieces)",1,4.00,4.00,https://jlcpcb.com/,"JLCPCB cart price (special offer, 2 day build). See images/jlcpcb-cart.png. Upload gerber.zip"
+"PCB shipping, UPS Express Saver (2-4 business days)",1,26.60,26.60,https://jlcpcb.com/,JLCPCB shipping estimate for 0.17 kg. A slower method may cost less at checkout
+
+TOTAL,31,,60.75,,"Sum of the Total column, USD, before tax"
