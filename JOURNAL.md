@@ -9,7 +9,6 @@ Some images and code snippets have been included. Firmware sketches have been cr
 # 2026-11-08: schematic creation, initial power circuit
 
 **Total time spent: 4 hours**
-Screenshot evidence captured: 2026-11-08, 1:43:23 PM–2:11:50 PM
 
 The creation of the schematic began with adding the header for the OLED display. There were symbols for the display in the library but I wasn’t too sure that they were the exact ones I would be using for the ready made module. I decided to go with a basic 4 pin header to keep it separate from the exact symbol for the module.
 
@@ -46,7 +45,6 @@ I learnt that just because a circuit looks connected doesn’t mean it is! I nee
 # 2026-11-09: Battery input, Switch and Reverse Polarity Protection
 
 **Total time spent: 3 hours**
-Screenshot evidence captured: 2026-11-09, 5:38:17 PM–5:54:59 PM
 
 Next was connecting the battery. As it is a 2S battery it will have a nominal voltage of 7.4 volts and a full charge voltage of 8.4 volts. I wanted to include a proper on/off switch for the battery and some reverse polarity protection. For my initial attempt I added a 2 pin battery connector. However in my initial schematic I incorrectly assigned the positive pin to +5V. This is because the battery isn’t a 5V power source. It would also connect the battery directly to the output of the buck regulator.
 
@@ -75,7 +73,6 @@ I learnt that the net names aren’t just labels. Any net with the power label w
 # 2026-11-09: Buzzer Driver and MPU-6050 Module
 
 **Total time spent: 4 hours**
-Screenshot evidence captured: 2026-11-09, 6:00:10 PM–6:23:55 PM
 
 I wanted the BUZZER to sound when starting and finishing a focus or break session. I didn’t want to drive a magnetic BUZZER directly from the ESP32 GPIO so added a small NPN transistor to switch it. The positive of the BUZZER is connected to the power rail, the other side to the collector of the transistor. The emitter is connected to GND and the base powered from the BUZZER net with a 1k resistor.
 
@@ -110,7 +107,6 @@ I learnt that using a module can help avoid a lot of extra circuitry. However I 
 # 2026-11-09: Connect XIAO, Battery Monitor, Buttons and LED
 
 **Total time spent: 3 hours**
-Screenshot evidence captured: 2026-11-09, 6:59:58 PM–7:05:00 PM
 
 With the major components added I began connecting them using the named nets. D1 was assigned to BAT_SENSE, D2 to BUZZER, D3 to MPU_INT, D4 and D5 to SDA and SCL, D6 and D7 to BTN1 and BTN2 and finally D10 to the status LED. The 3V3 output was assigned the +3V3 label. The GND pins were connected. VBUS was assigned to the 5V_SYS rail.
 
@@ -143,7 +139,6 @@ I learnt that when using an ADC divider I need to calculate for the maximum volt
 # 2026-11-10: Clean up Schematic and Perform Initial ERC Check
 
 **Total time spent: 3 hours**
-Screenshot evidence captured: 2026-11-10, 1:57:11 AM–1:59:56 AM
 
 Returning to the BUZZER section I corrected the power issue. The positive pin was still connected to +5V and the cathode of the flyback diode was connected to 5V_SYS. Both should be on the same rail. I moved the BUZZER pin to be on the 5V_SYS rail. This is connected to the VBUS pin of the XIAO.
 
@@ -172,7 +167,6 @@ I learnt that a clean ERC is useful but doesn’t guarantee the circuit is corre
 # 2026-11-10: Assign Footprints and Import PCB
 
 **Total time spent: 4 hours**
-Screenshot evidence captured: 2026-11-10, 2:02:28 AM–2:07:00 AM
 
 With the schematic looking cleaner the Assign Footprints tool was opened. Most of the components didn’t have footprints assigned. The footprint browser initially looked as if there weren’t many options available. Eventually I realised the filters were enabled and there was an old text filter. The filters were cleared and the library search started showing the correct footprints.
 
@@ -203,7 +197,6 @@ Learned: When assigning footprints you need to ensure they match the dimensions,
 # 2026-11-10: Component placement, board outline & initial routing
 
 **Total time spent: 2 hours**
-Screenshot evidence captured: 2026-11-10, 2:09:37 AM–2:19:15 AM
 
 The footprints have been added to the PCB editor. The components have been organised based on their function. The XIAO has been placed on the left-hand side of the board with the OLED & MPU sockets nearby. The buttons have been placed together on the right-hand side. The buzzer and transistor have been placed together near the top right. The battery connector and switch header have been placed near the bottom of the board. Lastly the buck converter components have been grouped together so the connections stay short.
 
@@ -236,7 +229,6 @@ Learned: Component placement can make routing difficult. Ground areas need to be
 # 2026-11-10: Final routing & DRC error
 
 **Total time spent: 5 hours**
-Screenshot evidence captured: 2026-11-10, 2:21:00 AM–2:22:19 AM
 
 Continuing from the last session. The remaining 4 connections were completed. The ground areas were filled. The status bar now indicates there are 0 connections to route. There are 86 pads, 20 vias, 145 segments and 32 nets. Four more vias and nine more segments have been added since last session.
 
@@ -269,7 +261,6 @@ Learned: The PCB may have 0 connections to route but still fail DRC. I have lear
 # 2026-11-10: Board shape & mounting holes
 
 **Total time spent: 3 hours**
-Screenshot evidence captured: 2026-11-10, 2:26:49 AM–2:34:10 AM
 
 Looking at the 3D view, I noticed the USB-C connector on the XIAO needed to be accessible. I moved the module up to the top of the board. The outline was altered to add a cut out at the end of the connector. All four corners were rounded to give a better shape.
 
@@ -304,7 +295,7 @@ Learned: The mounting holes should be added to the schematic. The mounting holes
 # 2026-11-10: CAD enclosure design
 
 **Total time spent: 6 hours**
-Screenshot evidence captured: 2026-11-10, 3:08:48 AM–3:19:40 AM
+
 
 The PCB outline and mounting holes were created. The PCB was exported from KiCad as a 3D model and imported into CAD. This has given me the actual shape of the board, location of the holes and height of the components.
 
@@ -333,7 +324,6 @@ Learned: Having the PCB imported as a 3D model has made designing the enclosure 
 # 2026-11-10: Firmware setup & 3 test sketches
 
 **Total time spent: 2 hours**
-Screenshot evidence captured: 2026-11-10, 3:37:08 AM–3:38:11 AM
 
 I have broken the firmware down into small sketches to test the basic pins and peripherals. This will help identify a problem with one section of the board if it doesn’t work.
 
@@ -364,7 +354,6 @@ Learned: Testing each peripheral makes the bring up easier. Separated the code b
 # 2026-11-10: OLED animations, buzzer, buttons & status LED
 
 **Total time spent: 2 hours**
-Screenshot evidence captured: 2026-11-10, 3:38:42 AM–3:39:14 AM
 
 With the basic display working, I have created a sketch to run six different animations on the OLED. The animations are a bouncing ball, spinner, countdown ring, scrolling text, tomato and sine wave. BTN1 is used to change to the next animation. BTN2 is used to cycle through the three speed modes (0.5x, 1x & 2x). The animation title is displayed so it is easy to see what is being run.
 
@@ -393,7 +382,6 @@ I’ve learnt that by using non-blocking timing we can get all our audio, button
 # 2026-11-10: MPU-6050 Configuration + Auto Rotate
 
 **Total time spent: 2 hours**
-Screenshot evidence captured: 2026-11-10, 3:39:30 AM–3:40:06 AM
 
 The new sketches focus on the GY-521 motion sensor. Sketch 05 uses I2C to talk to the MPU-6050 at address 0x68. We then configure the register with various different options such as power management, accelerometer range, gyroscope range, filtering, sampling, motion threshold and interrupt. We also have scaling values for each range.
 
@@ -420,7 +408,6 @@ I’ve learnt that we don’t need to use the gyroscope to get the basic orienta
 # 2026-11-10: Battery Monitoring + Full Pomodoro Demo
 
 **Total time spent: 2 hours**
-Screenshot evidence captured: 2026-11-10, 3:40:27 AM–3:40:59 AM
 
 We added a new sketch to monitor the battery. The voltage from the voltage divider on D1 is read. The voltage divider has a 100kΩ resistor at the top and 33kΩ at the bottom. We read the voltage on the ADC then scale it back up using the ratio of the resistors to give us an estimate of the total voltage of the pack. As the battery is a 2S pack we divide this by 2 to give us the voltage per cell.
 
