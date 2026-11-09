@@ -134,37 +134,37 @@ We will start by using 01_hello_pins.ino. Once we know that the I2C and OLED are
 ## Components and BOM
 
 
-| Qty | Component | Unit price (USD) | Total (USD) | Buy | Notes |
-|---:|---|---:|---:|---|---|
-| 1 | XIAO ESP32-C3 (U1) | $5.39 | $5.39 | [RobotShop](https://www.robotshop.com/products/seeedstudio-xiao-esp32c3-tiny-mcu-w-wi-fi-ble) | Seeed XIAO ESP32-C3 board only. Price checked on seller page. |
-| 1 | AP63205WU-7 buck converter, 5 V 2 A, TSOT-26 (U2) | $0.25 | $0.25 | [LCSC](https://www.lcsc.com/product-detail/C2071056.html) | LCSC starting price; small quantities may cost more. |
-| 1 | Inductor 4.7 µH, Bourns SRN6045TA-4R7M (L1) | $0.60 | $0.60 | [DigiKey](https://www.digikey.fi/en/products/detail/bourns-inc/SRN6045TA-4R7M/6155104) | Listed as out of stock with an 18-week lead time. Use a compatible shielded 4.7 µH inductor with the same land pattern. Estimate; check at checkout. |
-| 2 | Capacitor 22 µF 25 V X5R 1206 (C1, C2) | $0.0595 | $0.12 | [LCSC](https://www.lcsc.com/product-detail/C12891.html) | Samsung CL31A226KAHNNNE. LCSC starting price. |
-| 1 | Capacitor 10 µF 1206 (C4) | $0.05 | $0.05 | [LCSC search](https://www.lcsc.com/search?q=10uF+1206+25V+X5R) | Use 16 V or higher. Estimate; check at checkout. |
-| 2 | Capacitor 100 nF 0805 (C3, C5) | $0.01 | $0.02 | [LCSC search](https://www.lcsc.com/search?q=100nF+0805+50V) | Often sold in packs. Estimate; check at checkout. |
-| 1 | Resistor 1 kΩ 0805 (R1) | $0.01 | $0.01 | [LCSC search](https://www.lcsc.com/search?q=1k+0805+resistor) | Estimate; check at checkout. |
-| 1 | Resistor 100 kΩ 0805 (R2, battery divider top) | $0.01 | $0.01 | [LCSC search](https://www.lcsc.com/search?q=100k+0805+resistor) | Estimate; check at checkout. |
-| 1 | Resistor 33 kΩ 0805 (R3, battery divider bottom) | $0.01 | $0.01 | [LCSC search](https://www.lcsc.com/search?q=33k+0805+resistor) | Estimate; check at checkout. |
-| 1 | Resistor 470 Ω 0805 (R4) | $0.01 | $0.01 | [LCSC search](https://www.lcsc.com/search?q=470+ohm+0805+resistor) | Estimate; check at checkout. |
-| 1 | Schottky diode SS34, SMA (D2) | $0.05 | $0.05 | [LCSC search](https://www.lcsc.com/search?q=SS34) | Estimate; check at checkout. |
-| 1 | Diode 1N4148W, SOD-123 (D1, buzzer flyback) | $0.02 | $0.02 | [LCSC search](https://www.lcsc.com/search?q=1N4148W) | Estimate; check at checkout. |
-| 1 | LED 0805 (D3) | $0.03 | $0.03 | [LCSC search](https://www.lcsc.com/search?q=led+0805) | Estimate; check at checkout. |
-| 1 | NPN transistor MMBT3904, SOT-23 (Q1) | $0.02 | $0.02 | [LCSC search](https://www.lcsc.com/search?q=MMBT3904) | Estimate; check at checkout. |
-| 1 | P-MOSFET AO3401A, SOT-23 (Q2) | $0.10 | $0.10 | [LCSC search](https://www.lcsc.com/search?q=AO3401A) | Estimate; check at checkout. |
-| 1 | Passive buzzer 12 × 9.5 mm, Soberton WT-1209T (BZ1) | $1.15 | $1.15 | [DigiKey](https://www.digikey.com/en/products/detail/soberton-inc/WT-1209T/16384509) | Check the datasheet for the 7.6 mm pin pitch before ordering. Price checked on seller page. |
-| 1 | GY-521 MPU6050 module (J4 socket) | $3.79 | $3.79 | [OpenELAB](https://openelab.com/products/mpu6050-gy521-six-axis-sensor) | Listed as sold out / pre-order (10–20 working days). Check other sellers. |
-| 1 | 0.96-inch OLED 128 × 64 I2C SSD1306, 4-pin (J1 socket) | $6.89 | $6.89 | [ShillehTek](https://shillehtek.com/products/0-96-i2c-white-oled-display-module-4-pin-ssd1306) | Pin order varies between modules. Match it to J1: GND, 3V3, SCL, SDA. |
-| 1 | Female pin socket 1 × 8, 2.54 mm (J4) | $0.15 | $0.15 | [LCSC search](https://www.lcsc.com/search?q=female+header+1x8+2.54) | Estimate; check at checkout. |
-| 1 | Female pin socket 1 × 4, 2.54 mm (J1) | $0.10 | $0.10 | [LCSC search](https://www.lcsc.com/search?q=female+header+1x4+2.54) | Estimate; check at checkout. |
-| 1 | Male pin header 1 × 2, 2.54 mm (SW2 footprint) | $0.05 | $0.05 | [LCSC search](https://www.lcsc.com/search?q=pin+header+1x2+2.54) | Estimate; check at checkout. |
-| 1 | Slide or rocker switch SPST, wired to SW2 | $0.50 | $0.50 | [LCSC search](https://www.lcsc.com/search?q=slide+switch+SPDT) | Estimate; check at checkout. |
-| 2 | Tactile switch 6 × 6 mm through-hole (SW1, SW3) | $0.017 | $0.03 | [LCSC](https://www.lcsc.com/product-detail/C480288.html) | XKB TC-1102-B-I-B. LCSC starting price; low stock noted. Choose a height that fits the enclosure. |
-| 1 | JST PH 2-pin header B2B-PH-K-S (J2) | $0.30 | $0.30 | [DigiKey](https://www.digikey.nl/en/products/detail/jst-sales-america-inc/B2B-PH-K-S/926611) | Battery pack needs the mating JST PH plug. |
-| 1 | 2S Li-ion battery pack, 7.4 V, JST PH 2.0 plug | $9.00 | $9.00 | [DigiKey search](https://www.digikey.com/en/search?keywords=7.4V%20li-ion%20battery%20pack%20JST%20PH) | Not checked. Connector is rated around 2 A. A suitable 2S charger is also required. Estimate; check at checkout. |
-| 1 | M3 screws and standoffs (4 sets) | $1.50 | $1.50 | [LCSC search](https://www.lcsc.com/search?q=M3+standoff) | Mounting holes are 3.2 mm. Estimate; check at checkout. |
-| 1 | PCB, 2-layer, 36 × 82 mm, 1.6 mm, green (5 pieces) | $4.00 | $4.00 | [JLCPCB](https://jlcpcb.com/) | Cart price / special offer estimate. Upload `gerber.zip`. |
-| 1 | PCB shipping, UPS Express Saver (2–4 business days) | $26.60 | $26.60 | [JLCPCB](https://jlcpcb.com/) | Shipping estimate for 0.17 kg. A slower shipping option may cost less. |
-|  | **Total procurement estimate** |  | **$60.75** |  | Sum of the Total column, before tax. |
+| Qty | Component | Unit price (USD) | Total (USD) | Buy |
+|---:|---|---:|---:|---|
+| 1 | XIAO ESP32-C3 (U1) | $5.39 | $5.39 | [RobotShop](https://www.robotshop.com/products/seeedstudio-xiao-esp32c3-tiny-mcu-w-wi-fi-ble) |
+| 1 | AP63205WU-7 buck converter, 5 V 2 A, TSOT-26 (U2) | $0.25 | $0.25 | [LCSC](https://www.lcsc.com/product-detail/C2071056.html) |
+| 1 | Inductor 4.7 µH, Bourns SRN6045TA-4R7M (L1) | $0.60 | $0.60 | [DigiKey](https://www.digikey.fi/en/products/detail/bourns-inc/SRN6045TA-4R7M/6155104) |
+| 2 | Capacitor 22 µF 25 V X5R 1206 (C1, C2) | $0.0595 | $0.12 | [LCSC](https://www.lcsc.com/product-detail/C12891.html) |
+| 1 | Capacitor 10 µF 1206 (C4) | $0.05 | $0.05 | [LCSC search](https://www.lcsc.com/search?q=10uF+1206+25V+X5R) |
+| 2 | Capacitor 100 nF 0805 (C3, C5) | $0.01 | $0.02 | [LCSC search](https://www.lcsc.com/search?q=100nF+0805+50V) |
+| 1 | Resistor 1 kΩ 0805 (R1) | $0.01 | $0.01 | [LCSC search](https://www.lcsc.com/search?q=1k+0805+resistor) |
+| 1 | Resistor 100 kΩ 0805 (R2, battery divider top) | $0.01 | $0.01 | [LCSC search](https://www.lcsc.com/search?q=100k+0805+resistor) |
+| 1 | Resistor 33 kΩ 0805 (R3, battery divider bottom) | $0.01 | $0.01 | [LCSC search](https://www.lcsc.com/search?q=33k+0805+resistor) |
+| 1 | Resistor 470 Ω 0805 (R4) | $0.01 | $0.01 | [LCSC search](https://www.lcsc.com/search?q=470+ohm+0805+resistor) |
+| 1 | Schottky diode SS34, SMA (D2) | $0.05 | $0.05 | [LCSC search](https://www.lcsc.com/search?q=SS34) |
+| 1 | Diode 1N4148W, SOD-123 (D1, buzzer flyback) | $0.02 | $0.02 | [LCSC search](https://www.lcsc.com/search?q=1N4148W) |
+| 1 | LED 0805 (D3) | $0.03 | $0.03 | [LCSC search](https://www.lcsc.com/search?q=led+0805) |
+| 1 | NPN transistor MMBT3904, SOT-23 (Q1) | $0.02 | $0.02 | [LCSC search](https://www.lcsc.com/search?q=MMBT3904) |
+| 1 | P-MOSFET AO3401A, SOT-23 (Q2) | $0.10 | $0.10 | [LCSC search](https://www.lcsc.com/search?q=AO3401A) |
+| 1 | Passive buzzer 12 × 9.5 mm, Soberton WT-1209T (BZ1) | $1.15 | $1.15 | [DigiKey](https://www.digikey.com/en/products/detail/soberton-inc/WT-1209T/16384509) |
+| 1 | GY-521 MPU6050 module (J4 socket) | $3.79 | $3.79 | [OpenELAB](https://openelab.com/products/mpu6050-gy521-six-axis-sensor) |
+| 1 | 0.96-inch OLED 128 × 64 I2C SSD1306, 4-pin (J1 socket) | $6.89 | $6.89 | [ShillehTek](https://shillehtek.com/products/0-96-i2c-white-oled-display-module-4-pin-ssd1306) |
+| 1 | Female pin socket 1 × 8, 2.54 mm (J4) | $0.15 | $0.15 | [LCSC search](https://www.lcsc.com/search?q=female+header+1x8+2.54) |
+| 1 | Female pin socket 1 × 4, 2.54 mm (J1) | $0.10 | $0.10 | [LCSC search](https://www.lcsc.com/search?q=female+header+1x4+2.54) |
+| 1 | Male pin header 1 × 2, 2.54 mm (SW2 footprint) | $0.05 | $0.05 | [LCSC search](https://www.lcsc.com/search?q=pin+header+1x2+2.54) |
+| 1 | Slide or rocker switch SPST, wired to SW2 | $0.50 | $0.50 | [LCSC search](https://www.lcsc.com/search?q=slide+switch+SPDT) |
+| 2 | Tactile switch 6 × 6 mm through-hole (SW1, SW3) | $0.017 | $0.03 | [LCSC](https://www.lcsc.com/product-detail/C480288.html) |
+| 1 | JST PH 2-pin header B2B-PH-K-S (J2) | $0.30 | $0.30 | [DigiKey](https://www.digikey.nl/en/products/detail/jst-sales-america-inc/B2B-PH-K-S/926611) |
+| 1 | 2S Li-ion battery pack, 7.4 V, JST PH 2.0 plug | $9.00 | $9.00 | [DigiKey search](https://www.digikey.com/en/search?keywords=7.4V%20li-ion%20battery%20pack%20JST%20PH) |
+| 1 | M3 screws and standoffs (4 sets) | $1.50 | $1.50 | [LCSC search](https://www.lcsc.com/search?q=M3+standoff) |
+| 1 | PCB, 2-layer, 36 × 82 mm, 1.6 mm, green (5 pieces) | $4.00 | $4.00 | [JLCPCB](https://jlcpcb.com/) |
+| 1 | PCB shipping, UPS Express Saver (2–4 business days) | $26.60 | $26.60 | [JLCPCB](https://jlcpcb.com/) |
+|  | **Total procurement estimate** |  | **$60.75** |  |
 
 
 ## PCB manufacturing files
