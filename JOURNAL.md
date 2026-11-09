@@ -91,6 +91,8 @@ Whilst checking the pins I realised the chip requires more circuitry to support 
 
 ![Partially Connected MPU-6050 Chip](journalImages/j03_03_mpu6050-chip-wired.png)
 
+![Schematic With the MPU-6050 Chip](journalImages/j03_04_schematic-with-mpu-chip.png)
+
 I updated the design to use the GY-521 module with an 8 pin socket. This module includes the extra circuitry and I2C pull-ups. I used the pin order from the module as a reference. The pins are: VCC, GND, SCL, SDA, XDA, XCL, AD0 and INT.
 
 The VCC pin is connected to +3V3, the GND to GND, SCL and SDA to the shared I2C bus and INT to the MPU_INT net. The XDA and XCL pins aren’t used. The AD0 pin also isn’t used as it is pulled low by the module providing the expected I2C address of 0x68.
@@ -130,7 +132,7 @@ A Schottky Diode was added between the +5V output of the buck regulator and the 
 
 A status LED was added to D10 with a 470 ohm resistor. The cathode of the LED was connected to GND. Two push buttons were added. BTN1 was connected between BTN1 and GND. BTN2 was connected between BTN2 and GND. The firmware will use the internal pull-ups of the ESP32 so no external pull-up resistors were added.
 
-![Status LED Circuit](journalImages/j04_05_status-LED.png)
+![Status LED Circuit](journalImages/j04_05_status-led.png)
 
 All of the main components have been added. I noticed that the BUZZER was connected to both +5V and 5V_SYS. I wanted the BUZZER to be powered from 5V_SYS so it can be powered when the board is using USB and the battery buck regulator isn’t on. I also need to add no-connect flags to the unused pins. The symbols need to be annotated. The power flags also need to be added. Finally an ERC check can be performed.
 
@@ -186,7 +188,7 @@ Two pin switch connection kept using header footprint as the schematic symbol ha
 
 Using the 'Update PCB from schematic' command in KiCad the components and net connections were generated in the PCB editor. There were no warnings/errors. The footprints appeared in the PCB editor and ratsnest lines highlighted what needed to be connected.
 
-![Generate PCB from schematic](journalImages/j06_03_update-PCB-from-schematic.png)
+![Generate PCB from schematic](journalImages/j06_03_update-pcb-from-schematic.png)
 
 The footprints imported into the PCB editor were arranged in a long line. The 3D viewer was used to get a rough idea of where the components were laid out. This meant I could get an idea of where the larger components would be and where to place the connectors, display socket, sensor socket, buttons and buzzer.
 
@@ -254,7 +256,7 @@ Running the Design Rules Checker. I have turned on fill areas. There was 1 error
 
 I attempted to add another spoke to connect pad 2 to the ground area however there wasn’t enough space. I have added a short trace connecting the pad directly to a nearby ground via.
 
-![Added direct ground connection to J4 pad 2](journalImages/j08_06_j4-pad2-GND-fix.png)
+![Added direct ground connection to J4 pad 2](journalImages/j08_06_j4-pad2-gnd-fix.png)
 
 The Design Rules Checker now shows 0 errors. There are still 29 warnings. All warnings are related to the silk screen. Text is slightly too small, reference labels are too close to other footprints and some lines overlap the solder mask cut outs. A visual check would still be needed.
 
@@ -271,7 +273,7 @@ Screenshot evidence captured: 2026-11-10, 2:26:49 AM–2:34:10 AM
 
 Looking at the 3D view, I noticed the USB-C connector on the XIAO needed to be accessible. I moved the module up to the top of the board. The outline was altered to add a cut out at the end of the connector. All four corners were rounded to give a better shape.
 
-![Outline with USB cut out](journalImages/j09_01_outline-with-USB-notch.png)
+![Outline with USB cut out](journalImages/j09_01_outline-with-usb-notch.png)
 
 The silk screen was viewed to show where the reference labels and components would be. This helped identify how the board would look when printed. All the components (OLED, MPU Socket, Buttons, Buzzer & Power section) could be seen.
 
@@ -285,7 +287,7 @@ Four mounting hole symbols were added to the schematic. Each was assigned a M3 m
 
 The PCB was updated using the 'Update PCB from schematic’ command. The 4 mounting holes were added with no warnings/errors. The mounting holes were placed in their intended positions. They were placed away from the buzzer and USB cut out. The mounting hole positions will help identify where to place the enclosure posts and back plate.
 
-![Mounting holes imported](journalImages/j09_05_update-PCB-mounting-holes.png)
+![Mounting holes imported](journalImages/j09_05_update-pcb-mounting-holes.png)
 
 ![Mounting holes placed](journalImages/j09_06_mounting-holes-placed.png)
 
@@ -306,7 +308,7 @@ Screenshot evidence captured: 2026-11-10, 3:08:48 AM–3:19:40 AM
 
 The PCB outline and mounting holes were created. The PCB was exported from KiCad as a 3D model and imported into CAD. This has given me the actual shape of the board, location of the holes and height of the components.
 
-![PCB imported into CAD](journalImages/j10_01_pcb-imported-in-CAD.png)
+![PCB imported into CAD](journalImages/j10_01_pcb-imported-in-cad.png)
 
 I started with a back plate with a lip and cut out for the PCB. The four mounting holes were aligned with the M3 holes on the board. The holes need to be aligned correctly, otherwise it would make the assembly difficult or cause stress on the board when tightening.
 
@@ -314,13 +316,13 @@ I started with a back plate with a lip and cut out for the PCB. The four mountin
 
 The PCB was placed onto the back plate. The 0.96 inch OLED model was added so I could see how it would sit. The height of the sockets and taller components were considered. The case needs to give the components enough internal space.
 
-![PCB & OLED on back plate](journalImages/j10_03_pcb-on-plate-with-OLED.png)
+![PCB & OLED on back plate](journalImages/j10_03_pcb-on-plate-with-oled.png)
 
 The PCB, back plate and housing were exploded to see the order of the parts. An assembled version was also created so I could see where the OLED would go and how the back plate would look with the screw posts showing through.
 
 ![Exploded assembly](journalImages/j10_04_exploded-assembly.png)
 
-![Enclosure with OLED](journalImages/j10_05_enclosure-with-OLED.png)
+![Enclosure with OLED](journalImages/j10_05_enclosure-with-oled.png)
 
 The general case shape and back plate are now in place. The USB-C connector needs a cut out in the wall. The buttons and power switch need to be accessible from the outside. The buzzer needs a cut out to allow the sound to come out. There needs to be space for the 2S battery and JST connector. A window needs to be added for the OLED. The actual OLED and GY-521 modules also need to fit into the sockets.
 
@@ -349,7 +351,7 @@ The OLED and GY-521 modules use the same I2C bus. They are connected to D4 (SDA)
 
 This sketch uses the U8g2 library to test the 128x64 SSD1306 OLED. It contains simple text and shapes, progress bars, rotation, large clock and changing brightness. This was created as a test to ensure the display library is working and the layout is correct.
 
-![Sketch 03 - OLED basics](journalImages/j11_04_sketch-03-OLED-basics-top.png)
+![Sketch 03 - OLED basics](journalImages/j11_04_sketch-03-oled-basics-top.png)
 
 The sketches have been organised in the firmware folder. The images below show the previous layout. The sketches have been moved into one folder with numbered .ino files.
 
@@ -395,21 +397,21 @@ Screenshot evidence captured: 2026-11-10, 3:39:30 AM–3:40:06 AM
 
 The new sketches focus on the GY-521 motion sensor. Sketch 05 uses I2C to talk to the MPU-6050 at address 0x68. We then configure the register with various different options such as power management, accelerometer range, gyroscope range, filtering, sampling, motion threshold and interrupt. We also have scaling values for each range.
 
-[PICTURE: Sketch 05 MPU Config]
+![Sketch 05 MPU Config](journalImages/j13_01_sketch-05-mpu-config-top.png)
 
 We have buttons to change the accelerometer range (BTN1), filter (BTN2). BTN1 can be pressed long to toggle between showing the numerics or bubble level on the OLED. The Serial output displays the accelerometer in g, gyroscope in degrees per second, roll, pitch and temperature. There is also a comma separated option for the Serial Plotter.
 
-[PICTURE: Sketch 05 Loop + prints]
+![Sketch 05 Loop + prints](journalImages/j13_02_sketch-05-loop-and-prints.png)
 
 Sketch 06 is the main auto rotate functionality. The Orientation class is used to determine the gravity direction of the sensor then calculate how the user is holding the timer. As the GY-521 module can be used in any orientation we added a calibration wizard to ensure we know which way is up.
 
 The wizard asks for a few known positions then stores the directions for up, right and front. The calibration is stored into the ESP32 flash using preferences so we can load it again after a restart. We use the rotationFor() function to map the orientation detected to the four rotations.
 
-[PICTURE: Sketch 06 Auto Rotate Definitions]
+![Sketch 06 Auto Rotate Definitions](journalImages/j13_03_sketch-06-auto-rotate-top.png)
 
 The loop constantly updates the orientation of the sensor and rotates the display when a new position is detected. Holding both buttons for 3 seconds will clear the stored calibration and start the calibration wizard again. This orientation data is also used to determine if the timer is upside down or not which is required for the main demo.
 
-[PICTURE: Sketch 06 Main Loop]
+![Sketch 06 Main Loop](journalImages/j13_04_sketch-06-loop.png)
 
 We still need to run the code with the actual module. We need to ensure we can rotate the display in all 4 orientations, check the physical orientation of the vertical socket and test the motion interrupt on D3. Even if the interrupt doesn’t do what we expect the polling should still let us test this functionality.
 
@@ -422,21 +424,21 @@ Screenshot evidence captured: 2026-11-10, 3:40:27 AM–3:40:59 AM
 
 We added a new sketch to monitor the battery. The voltage from the voltage divider on D1 is read. The voltage divider has a 100kΩ resistor at the top and 33kΩ at the bottom. We read the voltage on the ADC then scale it back up using the ratio of the resistors to give us an estimate of the total voltage of the pack. As the battery is a 2S pack we divide this by 2 to give us the voltage per cell.
 
-[PICTURE: Sketch 08 Battery Monitor Setup]
+![Sketch 08 Battery Monitor Setup](journalImages/j14_01_sketch-08-battery-top.png)
 
 We then estimate the percentage of battery left based on a small curve of voltages for a lithium cell between 3.0V and 4.2V per cell. We’ve added a low battery threshold at 6.6V and a calibrate value that can be changed once we’ve compared to a multimeter. The setup section sets the ADC to the correct attenuation and initialises the OLED, LED, buttons and buzzer. The loop updates the battery every second. If there is a low battery it will turn the LED on and play a short warning on the buzzer. If the ADC is very low it’ll show that it is only being powered via USB.
 
-[PICTURE: Sketch 08 Setup + Loop]
+![Sketch 08 Setup + Loop](journalImages/j14_02_sketch-08-setup-and-loop.png)
 
 The final sketch brings together all the main functionality of the Pomodoro timer. The timer has 3 sections: Focus (25min), Short Break (5min) and Long Break (15min after 4 focuses). This also brings together the buzzer, status LED, battery monitor and auto rotate.
 
 In the demo version we set SECONDS_PER_MINUTE to 3 so we can simulate a 25min focus time in 75 seconds. This will help us test the timer flow without having to wait for 25 minutes. We need to change this back to 60.
 
-[PICTURE: Sketch 09 Main Settings]
+![Sketch 09 Main Settings](journalImages/j14_04_sketch-09-top.png)
 
 The loop updates the orientation, rotates the screen when needed and checks if the device is upside down. If FLIP_TO_FOCUS is enabled we’ll start the session when we turn the timer upside down and pause when we turn it back. When upside down the screen is set to power save mode. The timer, LED, battery and display are updated.
 
-[PICTURE: Sketch 09 End of Loop]
+![Sketch 09 End of Loop](journalImages/j14_03_sketch-09-loop-end.png)
 
 The buttons are BTN1 to start/pause, BTN2 to skip a session. BTN2 can be pressed long to reset. Holding both buttons for 3 seconds will re-calibrate the orientation.
 
