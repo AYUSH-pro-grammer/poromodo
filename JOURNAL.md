@@ -1,10 +1,21 @@
 # Poromodo Timer Development Journal
+**Total time spent: 3 hours**
 
-Below I have detailed the development of the various aspects of the battery powered Pomodoro timer. These entries have been listed in the order they were completed.
+Research
+I did some Research
 
-The main components of the project are the Seeed XIAO ESP32-C3, 0.96" 128x64 I2C OLED screen, GY-521 MPU-6050 module, BUZZER, buttons, status LED and 2S battery. The battery will be used to power the AP63205 buck regulator to produce a 5V rail.
+Before creating the schematic.
 
-Some images and code snippets have been included. Firmware sketches have been created as such; these should not be taken as any indication that they have been tested successfully on the hardware.
+Seeed XIAO ESP32-C3 documentation. This helped me understand the pinout. VBUS is the 5v input. 3V3_OUT is the modules internal regulator. VBAT was only for a single cell battery so it wasn’t connected. Also looked up the 3.3v current limit. I would use the smallest possible value of 500mA.
+AP63205 datasheet. Looked at the typical application circuit. Input/output capacitance. Bootstrap capacitor between BST and SW. Inductor was 4.7uH. As the fixed version was being used, there was no need for a feedback divider.
+Battery. A 2S Li-ion battery has a nominal voltage of 7.4v and has 8.4v when fully charged. This is why a buck converter is needed instead of a linear regulator. A correct 2S charger/BMS would also be needed.
+Reverse polarity protection. A P-channel MOSFET (AO3401A) can be used to protect the input. This has less voltage drop than a diode.
+MPU-6050 and GY-521. The raw MPU-6050 would need some additional components and is very difficult to solder by hand as it is small QFN. The GY-521 had the support circuitry and I2C pullups included. I would use this with an 8 pin socket. Read about how the orientation can be determined from the 3 axis gravity.
+OLED Module. 0.96" 128x64 SSD1306 using I2C. Different modules have different ordering of the 4 pinout. I will check the actual module against the footprint.
+Battery Monitoring. The voltage can be read from the battery using a resistor divider onto an ADC pin. Rough voltage to percentage graph of Li-ion cells.
+Software. ESP32 Arduino core. U8g2 display library.
+Manufacturing. JLCPCB PCB options. Shipping costs. Where to get the components from for the BOM.
+
 
 ![xiao](journalImages/image.png)
 ![displayOled](journalImages/imagecopy.png)
