@@ -6,6 +6,10 @@ The main components of the project are the Seeed XIAO ESP32-C3, 0.96" 128x64 I2C
 
 Some images and code snippets have been included. Firmware sketches have been created as such; these should not be taken as any indication that they have been tested successfully on the hardware.
 
+![xiao](journalImages/image.png)
+![displayOled](journalImages/imagecopy.png)
+
+
 # 2026-11-08: schematic creation, initial power circuit
 
 **Total time spent: 4 hours**
